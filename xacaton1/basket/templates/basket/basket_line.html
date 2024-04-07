@@ -1,0 +1,17 @@
+{% extends "basket/base.html" %}
+
+{% block content %}
+
+    {% for post in posts %}
+
+        {{post.count}}<br>
+        {{post.product.title}}<br>
+        <img src="{{ post.product.photo.url }}" alt="" width="200" height="200"><br>
+        {{post.product.price}}</br>
+        {{post.product.width}}</br>
+        {{post.product.length}}</br>
+        {{post.product.height}}</br>
+        {{post.product.color}}</br> <br>
+    {% endfor %}
+
+{% endblock %}

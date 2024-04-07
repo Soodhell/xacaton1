@@ -5,8 +5,18 @@ from django.urls import reverse
 class UserType(models.Model):
     name = models.CharField(max_length=250)
 
+    def __str__(self):
+        return self.name
+
+
 class CustomUser(AbstractUser):
-    user_type = models.ForeignKey(UserType, on_delete=models.PROTECT, verbose_name="Вид деятельности: ", null=True)
+    user_type = models.ForeignKey(UserType, on_delete=models.PROTECT, verbose_name="Вид деятельности ", null=True)
 
     def get_absolute_url(self):
         return reverse('user_detail', kwargs={'pk': self.pk})
+
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        unique_together = [['email']]

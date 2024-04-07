@@ -1,0 +1,19 @@
+{% extends "basket/base.html" %}
+
+{% block content %}
+
+<div class="center">
+	    <h2 class="text-center">{{ name_title_form }}</h2>
+
+		{{post.count}}<br>
+        {{post.product.title}}<br>
+        <img src="{{ post.product.photo.url }}" alt="" width="200" height="200"><br>
+        {{post.product.price}}</br>
+        {{post.product.width}}</br>
+        {{post.product.length}}</br>
+        {{post.product.height}}</br>
+        {{post.product.color}}</br> <br>
+
+</div>
+
+{% endblock %}
