@@ -4,8 +4,8 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DetailView
 from .models import *
 from .forms import *
+from basket.models import *
 from django.shortcuts import redirect
-
 
 class NewslineCreate(LoginRequiredMixin, CreateView):
     template_name = "news/index.html"
@@ -68,3 +68,30 @@ class NewslineList(ListView):
     context_object_name = 'posts'
 
     extra_context = {'title': 'Статьи'}
+
+
+class Productslist(LoginRequiredMixin, ListView):
+
+    template_name = "news/news_line.html"
+    model = News
+    context_object_name = 'posts'
+
+    extra_context = {'title': 'Статьи'}
+
+    def get_queryset(self):
+        return News.objects.all().filter(author=self.request.user)
+
+
+class OrderedProductslist(LoginRequiredMixin, ListView):
+
+    template_name = "news/order_product.html"
+    model = Basket
+    context_object_name = 'posts'
+
+    extra_context = {'title': 'Заказанные товары'}
+
+    def get_queryset(self):
+        if not (News.objects.all().filter(pk=self.kwargs.get('pk'), author=self.request.user)):
+            return None
+
+        return Basket.objects.all().filter(product=self.kwargs.get('pk'))
