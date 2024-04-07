@@ -26,7 +26,7 @@ def index(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('users.urls')),
-    path('', index, name='main'),
+    path('', include('news.urls')),
 ]
 
 if settings.DEBUG:
