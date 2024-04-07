@@ -4,15 +4,15 @@
 
     {% for post in posts %}
 
-        {{post.title}}<br>
-        {{post.content}}<br>
-        <img src="{{ post.photo.url }}" alt="" width="200" height="200"><br>
-        {{post.price}}</br>
-        {{post.width}}</br>
-        {{post.length}}</br>
-        {{post.height}}</br>
-        {{post.color}}</br>
-        <a href="#">{{post.author}}</a></br> <br>
+        <h1>{{post.title}}</h1>
+        <p>{{post.content}}</p>
+        <img src="{{ post.photo.url }}" alt="" width="200" height="200">
+        <p>{{post.price}}</p>
+        <p>{{post.width}}</p>
+        <p>{{post.length}}</p>
+        <p>{{post.height}}</p>
+        <p>{{post.color}}</p>
+        <a href="{{ post.get_absolute_url }}">Подробнее</a></br>
     {% endfor %}
 
 {% endblock %}

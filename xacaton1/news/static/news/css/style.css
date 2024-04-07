@@ -1,0 +1,25 @@
+body{
+
+    background-color: rgb(141, 78, 78);
+    padding: 0;
+    margin: 0;
+
+}
+
+li{
+
+    list-style-type: none;
+
+}
+
+p,a,h1,h2,h3,h4,h5,h6{
+    color: white;
+}
+
+.header{
+
+    background-color: #090974;
+    width: 100%;
+    height: 100px;
+
+}
