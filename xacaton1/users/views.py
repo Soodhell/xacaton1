@@ -22,6 +22,8 @@ class RegisterUser(CreateView):
         context['name_title_form'] = 'Регистрация'
         context['name_button'] = 'Зарегистрироваться'
         context['title'] = 'Регистрация'
+        context['text_link'] = 'Войти'
+        context['link'] = 'login'
         return context
 
 class DetailUser(DetailView):
@@ -70,4 +72,6 @@ class LoginUser(LoginView):
         context['name_title_form'] = 'Войти'
         context['name_button'] = 'Войти'
         context['title'] = 'Вход'
+        context['text_link'] = 'Регистрация'
+        context['link'] = 'register'
         return context
