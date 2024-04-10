@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('users.urls')),
     path('basket/', include('basket.urls')),
+    path('pick_up_point/', include('pick_up_point.urls')),
     path('', include('news.urls')),
 ]
 

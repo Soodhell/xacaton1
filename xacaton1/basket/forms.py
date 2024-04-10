@@ -8,10 +8,10 @@ from django.utils.translation import gettext_lazy as _
 class CreateBasket(ModelForm):
     class Meta:
         model = Basket
-        fields = ['count', 'product']
+        fields = ['count', 'product', 'delivery_point_address']
 
 
 class ChangeBasket(ModelForm):
     class Meta:
         model = Basket
-        fields = ['count', 'product']
+        fields = ['count', 'product', 'accepted']

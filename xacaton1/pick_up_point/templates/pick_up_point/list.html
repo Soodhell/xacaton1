@@ -1,0 +1,12 @@
+{% extends 'pick_up_point/base.html' %}
+
+{% block content %}
+
+{% for post in posts %}
+
+    {{post.city}}
+    {{post.address}}
+
+{% endfor %}
+
+{% endblock %}

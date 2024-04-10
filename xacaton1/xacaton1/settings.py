@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'news.apps.NewsConfig',
-    'basket.apps.BasketConfig'
+    'basket.apps.BasketConfig',
+    'pick_up_point.apps.PickUpPointConfig',
 ]
 
 MIDDLEWARE = [
