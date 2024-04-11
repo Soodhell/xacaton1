@@ -65,7 +65,6 @@ class BasketDetail(LoginRequiredMixin, DetailView):
 class BasketlineList(LoginRequiredMixin, ListView):
     template_name = "basket/basket_line.html"
     model = Basket
-    context_object_name = 'posts'
 
     def get_queryset(self):
         return Basket.objects.all().filter(user=self.request.user)

@@ -33,3 +33,21 @@ class PickUpPointList(ListView):
 
     def get_queryset(self):
         return PickUpPoint.objects.all().filter(user=self.request.user)
+
+
+class PickUpPointUpdate(UpdateView):
+
+    template_name = "pick_up_point/detail.html"
+    model = PickUpPoint
+
+    fields = ['city', 'address']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Изменить пункт выдачи'
+        context['name_title_form'] = 'Измениить пункт выдачи'
+        context['name_button'] = 'Изменить'
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('main')
