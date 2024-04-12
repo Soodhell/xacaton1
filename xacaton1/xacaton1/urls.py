@@ -16,18 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 def index(request):
-    return HttpResponse("Hello")
+    logout(request)
+    return redirect('main')
 
 urlpatterns = [
+    path('logout/', index, name='logout'),
     path('admin/', admin.site.urls),
     path('user/', include('users.urls')),
     path('basket/', include('basket.urls')),
     path('pick_up_point/', include('pick_up_point.urls')),
+    path('route/', include('route.urls')),
     path('', include('news.urls')),
 ]
 

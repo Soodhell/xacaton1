@@ -93,7 +93,7 @@ a{
     border-radius: 10px;
     padding: 20px;
     margin-right: 37px;
-    width: 45%;
+    width: 30%;
     margin-top: 60px;
     display: inline-block;
 }
@@ -137,21 +137,4 @@ a{
     margin-bottom: 20px;
     border: 1px black solid;
     border-radius: 10px;
-}
-
-#id_password1, #id_password2 {
-
-    padding: 10px 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 1px black solid;
-    border-radius: 10px;
-
-}
-
-.button_top{
-    margin-right: 20px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-
 }

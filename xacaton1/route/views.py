@@ -7,9 +7,9 @@ from .forms import *
 from django.shortcuts import redirect
 
 
-class BasketCreate(LoginRequiredMixin, CreateView):
-    template_name = "basket/index.html"
-    form_class = CreateBasket
+class RouteCreate(LoginRequiredMixin, CreateView):
+    template_name = "news/index.html"
+    form_class = RouteCreateForm
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
@@ -25,9 +25,9 @@ class BasketCreate(LoginRequiredMixin, CreateView):
         return context
 
 
-class BasketUpdate(LoginRequiredMixin, UpdateView):
-    template_name = "basket/index.html"
-    model = Basket
+class RouteUpdate(LoginRequiredMixin, UpdateView):
+    template_name = "news/index.html"
+    model = Route
 
     fields = ['count',]
 
@@ -49,24 +49,12 @@ class BasketUpdate(LoginRequiredMixin, UpdateView):
         return context
 
 
-class BasketDetail(LoginRequiredMixin, DetailView):
-    template_name = "basket/detail.html"
-    model = Basket
-    context_object_name = 'post'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Публикация'
-        context['name_title_form'] = 'Ваша публикация!'
-        return context
-
-
-class BasketlineList(LoginRequiredMixin, ListView):
-    template_name = "basket/basket_line.html"
+class RoutelineList(LoginRequiredMixin, ListView):
+    template_name = "news/basket_line.html"
     context_object_name = 'posts'
-    model = Basket
+    model = Route
 
     def get_queryset(self):
-        return Basket.objects.all()
+        return Route.objects.all()
 
     extra_context = {'title': 'Статьи'}

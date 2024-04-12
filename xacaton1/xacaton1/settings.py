@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'basket.apps.BasketConfig',
     'pick_up_point.apps.PickUpPointConfig',
+    'route.apps.RouteConfig',
 ]
 
 MIDDLEWARE = [

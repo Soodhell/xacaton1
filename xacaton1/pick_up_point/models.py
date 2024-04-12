@@ -1,7 +1,6 @@
 from django.db import models
 from users.models import CustomUser
 
-
 class PickUpPoint(models.Model):
     city = models.CharField(max_length=250, verbose_name="Город")
     address = models.CharField(max_length=500, verbose_name="Адрес")

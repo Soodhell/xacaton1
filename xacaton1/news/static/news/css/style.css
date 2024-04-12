@@ -1,9 +1,32 @@
 body{
-
-    background-color: rgb(141, 78, 78);
     padding: 0;
     margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 30px;
+    font-style: normal;
+}
 
+* {
+    box-sizing: border-box;
+  }
+
+button{
+    cursor: pointer;
+}
+
+ul {
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+ul li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    padding: 3px; /* Поля вокруг текста */
+}
+
+h3{
+    font-size: 24px;
 }
 
 li{
@@ -12,14 +35,106 @@ li{
 
 }
 
-p,a,h1,h2,h3,h4,h5,h6{
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.cw{
     color: white;
 }
 
-.header{
+.btn{
+    cursor: pointer;
+}
 
-    background-color: #090974;
+.crr{
+    margin-right: 10px;
+    color: red;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.main{
+    padding-top: 100px;
+    margin-bottom: 40px;
+}
+
+.header{
+    position: fixed;
+    background-color: #016b5d;
     width: 100%;
     height: 100px;
+    padding-top: 20px;
+}
 
+.head_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;    
+    align-content: space-between;
+}
+
+.list_block_content{
+    display: inline-block;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.block_content{
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 37px;
+    width: 30%;
+    margin-top: 60px;
+    display: inline-block;
+}
+
+.text_header{
+    margin-right: 50px;
+}
+
+.button_more_details{
+    border-radius: 10px;
+    border: 1px black solid;
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.detail_block{
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px black solid;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 650px;
+}
+
+.img_product{
+    border-radius: 10px;
+    width: 100%;
+}
+
+.absolute_center{
+    display: flex;
+    align-items: center;
+    justify-content: center
+
+}
+
+.field{
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px black solid;
+    border-radius: 10px;
 }

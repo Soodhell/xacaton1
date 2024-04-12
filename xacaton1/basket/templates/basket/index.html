@@ -1,17 +1,26 @@
 {% extends "basket/base.html" %}
 
 {% block content %}
-	  <form method="post" novalidate enctype="multipart/form-data">
-	  	{% csrf_token %}
-	    <h2 class="text-center">{{name_title_form}}</h2>
-		{% for field in form %}
-	    		{{ field.label_tag }}
-	        	{{ field }}
-	        	{% if field.errors %}
-	        		<small>{{ field.errors|striptags }}</small>
-	        	{% endif %}</br>
-		{% endfor %}
+	<div class="container">
+		<div class="absolute_center">
+			<form method="post" novalidate enctype="multipart/form-data">
+			{% csrf_token %}
+				<h2 class="text-center">{{name_title_form}}</h2>
+				{% for field in form %}
+				<div class="block_field">
+					{{ field.label_tag }}
+					{{ field }}
+					{% if field.errors %}
+						<small>{{ field.errors|striptags }}</small>
+					{% endif %}</br>
+				</div>
+						
+				{% endfor %}
 
-		<input type="submit" value="{{ name_button }}" class="btn btn-primary full-width">
-	</form>
+				<input class="button_more_details cursor_on" type="submit" value="{{ name_button }}" class="btn btn-primary full-width">
+			</form>
+		</div>
+
+	</div>
+
 {% endblock %}

@@ -2,18 +2,24 @@
 
 {% block content %}
 
-<div class="center">
-	    <h2 class="text-center">{{ name_title_form }}</h2>
-
-		{{ post.title }}</br>
-		{{ post.content }}</br>
-		<img src="{{ post.photo.url }}" alt="" width="200" height="200"><br>
-		{{post.price}}</br>
-        {{post.width}}</br>
-        {{post.length}}</br>
-        {{post.height}}</br>
-        {{post.color}}</br>
-
+<div class="container">
+	<div class="detail_block">
+		<h3>{{ post.title }}</h3>
+		<img src="{{ post.photo.url }}" class="img_product" height="400">
+		<p>
+			<h4>О товаре:</h4>{{ post.content }}
+		</p>
+        <p>Ширина:{{post.width}}</p>
+        <p>Длинна:{{post.length}}</p>
+        <p>Высота:{{post.height}}</p>
+        <p>Цвет:{{post.color}}</p>
+		<div class="head_header">
+			<a href="{% url 'basket_create' %}">
+				<button class="button_more_details">Заказать</button>
+			</a> 
+			<p class="crr">{{post.price}}₽</p>
+		</div>
+	</div>
 </div>
 
 {% endblock %}

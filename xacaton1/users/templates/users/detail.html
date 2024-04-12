@@ -1,18 +1,29 @@
 {% extends "users/base.html" %}
 
 {% block content %}
-<div class="center">
-	  	{% csrf_token %}
+<div class="container">
+	<div class="absolute_center">
+		<div class="block_content">
+			<p>{{ post.username }}</p>
+			<p>{{ post.first_name }}</p>
+			<p>{{ post.last_name }}</p>
+			<p>{{ post.email }}</p>
+			
+			<div class="list_button">
+				<button class="btn button_more_details">
+					<a href="{% url 'create_pick_up_point' %}">Добавить пункт выдачи или завод</a>
+				</button>
 
-		{{ post.username }}</br>
-		{{ post.first_name }}</br>
-		{{ post.last_name }}</br>
-		{{ post.phone }}</br>
-		{{ post.email }}
-		{% if post.errors %}
-			<small>{{ field.errors|striptags }}</small>
-		{% endif %}
+				<button class="btn button_more_details button_top">
+					<a href="{% url 'create_route' %}">Добавить маршрут </a>
+				</button>
 
+				<button class="btn button_more_details">
+					<a href="{% url 'create_news' %}">Добавить товар</a>
+				</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% endblock %}
